@@ -1,0 +1,143 @@
+// DONE SECTION
+// CREATE API
+// -- CRUD 
+// -- CREATE - Done
+// -- READ - Done
+// -- UPDATE - Done for one
+// -- DELETE - Done
+// CREATE MONGODB AND CONNECT - Done
+// API - security and additonal features
+// Control what gets sent back - Done
+// Add validators to ensure data sent to DB is in correct format. - DONE
+// Cookies - log users in using cookies -- DONE
+// PROTECT ROUTES using users and admins -- DONE
+// PROTECT FROM HACKERS -- DONE
+// Make sure DB 'correct' field works DONE
+// Add author to user DONE
+// Need to complete the other front end routes DONE
+// Use cookies -- DONE
+// Create cookies upon sign up and reconfigure the verification method - DONE
+// Create sign up page - DONE
+// Show data to all normalized data in results controller - DONE
+// Add emailing - DONE
+// -- Log in page - DONE
+// authController.protect working. different pages are good
+// What should the authController.Protect actually Protect - DONE
+// If someones not logged in - DONE
+// If someones session expired - DONE
+// Create middlewares - DONE
+// Restrict users (Protect the routes) - DONE
+// If someone's logged in, he can't access log in or sign up page - DONE
+// make cookie decoder a middle ware and make user info accessible to controllers -- DONE
+// CREATE FRONT END TO DISPLAY WORK -- DONE
+NOW WE NEED TO CREATE A VERIFICATION CODE
+AFTER WE CREATE A VERIFICATION CODE, SEND IT TO THE EMAIL
+ENTER THE CODE IN THE FIELD PROVIDED
+IF IT'S THE CORRECT CODE CONTINUE OTHERWISE DON'T
+******************************************************
+******************************************************
+******************************************************
+******************************************************
+/////// DEPLOYMENT ///////
+Deploy mongoDB cluster using atlas -- DONE
+ -- Connect the backend server to mongoDB using new config -- DONE
+Make server display static react app -- DONE
+Deploy Server to google app engine -- DONE
+CI/CD github actions -- DONE
+ - Now we just need to upload the frontend-admin to github
+ - Create the .yaml file to build the front end first then, replace the file in the back end, then deploy
+Deploy front end using github actions
+
+
+
+
+/// WHAT NEEDS TO BE DONE
+// Hash and salt passwords
+// SORT OUT CONFIG.ENV and allow access to the config file
+// Apply validation to all routes
+// Display users name and other details
+// Data santization
+
+// BUGS *******
+// If someones account gets deleted it just constantly makes request
+// If you switch around the name and email it just breaks the database
+// / path doesn't work 
+
+// Make front end look nice
+// Create template
+// for the pages make a:
+
+// -- Update details page
+// Connect front end to back end
+// Make seperate pages for admin and users
+// Hash the password then pass it into database - do data validation in front end
+// When you upload data there needs to be an answered section to store all of the answers
+
+//WHAT NEEDS TO GET DONE THAT YOU'VE SKIPPED:
+// Do password verification (make sure both passwords match)
+// Allow user to reset password
+// Upload proper data to Data base
+// Host website
+// Add filtering to quizController (content type, number of questions - filter bar for later)
+// --- Some sorting implemented, come back and make it better
+// Encrypt password - do later
+
+
+// SIDE QUESTS
+// create seperate files Handling errors and different RES. make code more succinct
+
+
+
+
+
+// Create admin front end
+// fully control quizes - create questions, create quizzes, list all users in another section
+// start off basic, get it working then add features
+
+// API has been created
+// Now just make a front end
+// Create NAV to navigate between the different options
+// Create new:
+// Quiz
+// Question
+// Answer
+// View quizzes
+
+
+// CREATE QUIZ SECTION
+// ENTER QUIZ NAME
+// ENTER Description
+// SELECT questions + answers
+// Submit
+ 
+Answer Table
+-- create a answer ( text, picture, audio ) -- DONE
+// id=1, value='messi', imgSrc
+// id=4, value='ronaldo'
+// id=6, value='pop'
+// id=9, value='wateva'
+// id=2, value='https://www.something.com/pic12
+
+Question Table
+-- create a question ( question text, answers[] ) -- DONE
+1, 'who is the goat', [1, 4, 6, 10], 4
+// step 1 - enter question text
+// step 2 - select questions 
+// step 3 - select answer
+
+Create a quiz
+// step 1 - enter quiz name
+// step 2 - select questions to go in quiz
+// quizID = 10, 'Tahas quiz', [1,34,56,67,23]
+// quizID = 11, 'Mus quiz', [1,34,22,67,11]
+
+
+-- create a question ( question text, answers[] )
+// Create the answer table (schema-done, routes-almost, get all done)
+// for the answer table store text, image, audio - DONE
+// Create the question table (schema, routes, etc.) - DONE
+// for the question table it should contain the question text and 4 answers - DONE
+// the answers should be an array of answers that points to the id's of answers - DONE
+// so it should be foreign keys - DONE
+
+

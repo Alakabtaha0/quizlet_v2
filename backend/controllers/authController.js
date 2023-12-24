@@ -174,7 +174,7 @@ exports.login = catchAsync(async (req, res, next) => {
 		return next(
 			res.status(401).json({
 				status: "Fail",
-				message: "Incorrect email or password -- TESTING CI CD",
+				message: "Incorrect email or password",
 			})
 		);
 	}
