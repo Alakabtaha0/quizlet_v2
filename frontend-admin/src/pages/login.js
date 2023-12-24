@@ -7,6 +7,8 @@ import '../styles/login.css';
 
 const Login = () => {
     
+    console.log('Testing CI/CD');
+    
     const incorrectLogin = () => {
         const incorrect = document.querySelector('#incorrect-indicator-1');
         incorrect.classList.remove('hidden');
