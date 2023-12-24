@@ -3,7 +3,16 @@ on: [push]
 jobs:
   build:
     runs-on: macos-latest
-
     steps:
-    - name: deploy to gcloud
-    - run:  gcloud app deploy
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Google Cloud SDK
+      uses: google-github-actions/setup-gcloud@master
+      with:
+        project_id: ${{ quizlet-01 }}
+        service_account_key: ${{ 9d31799cdea0d5e0f61c74019d174f4757fc9d0b }}
+        export_default_credentials: true
+
+    - name: Deploy to GCloud
+      run: gcloud app deploy
