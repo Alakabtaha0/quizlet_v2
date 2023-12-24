@@ -4,6 +4,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      run: pwd
     - name: build front end
       run: cd frontend-admin && npm run build
       
