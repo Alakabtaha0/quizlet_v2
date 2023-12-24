@@ -8,7 +8,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Set up Google Cloud SDK
-      uses: google-github-actions/setup-gcloud@master
+      uses: google-github-actions/setup-gcloud@main
       with:
         project_id: quizlet-01
         service_account_key: 9d31799cdea0d5e0f61c74019d174f4757fc9d0b
