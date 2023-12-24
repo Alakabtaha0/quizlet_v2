@@ -19,4 +19,4 @@ jobs:
          --key-file=- --project=quizlet-01
         
     - name: Deploy to GCloud
-      run: gcloud app deploy
+      run: cd backend && gcloud app deploy
