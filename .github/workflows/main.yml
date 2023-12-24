@@ -15,7 +15,7 @@ jobs:
         export_default_credentials: true
     - name: Authenticate Google Cloud
       run: |-
-        gcloud auth activate-service-account --quiet
+         gcloud auth activate-service-account quizlet-01@appspot.gserviceaccount.com \ --key-file=${{secrets.SERVICE_ACCOUNT_KEY}} --project=quizlet-01
         
     - name: Deploy to GCloud
       run: gcloud app deploy
