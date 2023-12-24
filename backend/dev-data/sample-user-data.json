@@ -1,0 +1,24 @@
+[
+    {
+        "id": 1,
+        "name": "John Doe",
+        "email": "johndoe@mail.com",
+        "phone": "1234567890",
+        "address": "123 Main St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "12345",
+        "password": "password"
+    },
+    {
+        "id": 2,
+        "name": "Jane Doe",
+        "email": "janedoe@mail.com",
+        "phone": "1234567890",
+        "address": "123 Main St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "12345",
+        "password": "password"
+    }
+]

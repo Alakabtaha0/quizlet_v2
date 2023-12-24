@@ -1,0 +1,146 @@
+[
+    {
+        "id": 1,
+        "name": "Quiz 1",
+        "description": "This is a quiz about capitals",
+        "dateCreated": "01-01-01",
+        "numberOfQuestions": 2,
+        "numberOfTimesSolved": 2,
+        "questions": [
+            {
+                "id": 1,
+                "question": "What is the capital of France?",
+                "answers": [
+                    {
+                        "id": 1,
+                        "answer": "London"
+                    },
+                    {
+                        "id": 2,
+                        "answer": "Paris"
+                    },
+                    {
+                        "id": 3,
+                        "answer": "Dublin"
+                    },
+                    {
+                        "id": 4,
+                        "answer": "New York"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "question": "What is the capital of Ireland?",
+                "answers": [
+                    {
+                        "id": 1,
+                        "answer": "London"
+                    },
+                    {
+                        "id": 2,
+                        "answer": "Paris"
+                    },
+                    {
+                        "id": 3,
+                        "answer": "Dublin"
+                    },
+                    {
+                        "id": 4,
+                        "answer": "New York"
+                    }
+                ]
+            }
+        ],
+        "solvedBy": [
+            {
+                "id": 1,
+                "name": "John Doe",
+                "email": "johndoe@mail.com",
+                "score": 1,
+                "dateSolved": "01-01-01",
+                "timeSolved": "00:05:00"
+            },
+            {
+                "id": 2,
+                "name": "Jane Doe",
+                "email": "johndoe@mail.com",
+                "score": 2,
+                "dateSolved": "01-01-01",
+                "timeSolved": "00:02:00"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Quiz 2",
+        "description": "This is a quiz about capitals",
+        "dateCreated": "01-01-01",
+        "numberOfQuestions": 2,
+        "numberOfTimesSolved": 1,
+        "questions": [
+            {
+                "id": 1,
+                "question": "What is the capital of France?",
+                "answers": [
+                    {
+                        "id": 1,
+                        "answer": "London"
+                    },
+                    {
+                        "id": 2,
+                        "answer": "Paris"
+                    },
+                    {
+                        "id": 3,
+                        "answer": "Dublin"
+                    },
+                    {
+                        "id": 4,
+                        "answer": "New York"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "question": "What is the capital of Ireland?",
+                "answers": [
+                    {
+                        "id": 1,
+                        "answer": "London"
+                    },
+                    {
+                        "id": 2,
+                        "answer": "Paris"
+                    },
+                    {
+                        "id": 3,
+                        "answer": "Dublin"
+                    },
+                    {
+                        "id": 4,
+                        "answer": "New York"
+                    }
+                ]
+            }
+        ],
+        "solvedBy": [
+            {
+                "id": 1,
+                "name": "John Doe",
+                "email": "johndoe@mail.com",
+                "score": 1,
+                "dateSolved": "01-01-01",
+                "timeSolved": "00:05:00"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Quiz 3",
+        "description": "This is a quiz about capitals",
+        "dateCreated": "01-01-01",
+        "numberOfQuestions": 2,
+        "numberOfTimesSolved": 0
+    }
+]
