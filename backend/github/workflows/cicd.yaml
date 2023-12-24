@@ -1,9 +1,0 @@
-name: CICD-workflow
-on: [push]
-  jobs:
-    build:
-      runs-on: macos-latest
-
-      steps:
-      - name: deploy to gcloud
-      - run: cd ../.. && gcloud app deploy

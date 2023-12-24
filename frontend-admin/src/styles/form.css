@@ -1,0 +1,58 @@
+.form-format {
+    width: 100%;
+    height: 85%;
+    left: 0;
+}
+
+.form-format h1 {
+    text-align: center;
+}
+
+.btn-local {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-local button {
+    width: 120px;
+    height: 60px;
+    font-size: 15px;
+    border-radius: 60px;
+    border: none;
+    background-color: smokegray;
+    margin: 10px;
+    cursor: pointer
+}
+
+.q-format {
+    padding: 40px 100px;
+    height: 50%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: repeat(2, 1fr);
+    justify-items: center;
+}
+
+.q-header {
+    color:darkblue;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 50px;
+    padding-left: 100px;
+}
+
+.a-format {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: 240px;
+    border: 2px solid black;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.a-format h3 {
+    color: white;
+}

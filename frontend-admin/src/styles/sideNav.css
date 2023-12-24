@@ -1,0 +1,27 @@
+.side-nav {
+    background-color: #f9f9f9;
+    height: 100%;
+    overflow-x: hidden;
+    transition: 0.5s;
+    width: 250px;
+    z-index: 1;
+}
+
+.nav-form {
+    margin: 0;
+    padding: 0;
+    padding-top: 50px;
+    list-style: none;
+}
+
+.nav-form li {
+    padding: 5px 20px;
+    margin: 5px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.nav-form li:hover {
+    background-color: #e6e6e6;
+}

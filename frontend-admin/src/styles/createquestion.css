@@ -1,0 +1,66 @@
+.form-format {
+    margin: 0 20px;
+    padding: 30px;
+    padding-top: 50px;
+    list-style: none;
+}
+
+.detail-block {
+    margin: 30px 0;
+}
+
+.detail-block label {
+    font-size: 20px;
+    font-weight: 700;
+    color: #172f34;
+}
+
+.detail-block input,
+.detail-block textarea,
+.detail-block select {
+    display: block;
+    margin: 10px 0;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    width: 300px;
+    background-color: rgba(205, 205, 205, 0.607);
+}
+
+.placement-area {
+    display: block;
+    margin: 10px 0;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    width: 300px;
+    background-color: rgba(205, 205, 205, 0.607);
+}
+
+.detail-block select {
+    cursor: pointer;
+}
+
+.quiz-description-block {
+    height: 100px;
+}
+
+.form-format input {
+    display: block;
+}
+
+.option-block {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 10px;
+    border: 1px solid black;
+    padding: 0 10px;
+    width: 150px;
+}
+
+.close-x-mark {
+    font-size: 16px;
+    cursor: pointer;
+}
+

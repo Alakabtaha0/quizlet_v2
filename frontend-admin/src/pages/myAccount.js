@@ -1,0 +1,89 @@
+import React, { useEffect, useState, useContext } from 'react';
+import axios from 'axios';
+import Cookies from 'js-cookie';
+import '../styles/myaccount.css';
+
+
+const MyAccount = () => {
+    const [readOnlyFields, setReadOnlyFields] = useState({
+        name: true,
+        email: true,
+        password: true
+    });
+    const [userData, setUserData] = useState({});
+    const userID = localStorage.getItem('userID');
+
+    // Get user information
+    useEffect(() => {
+        const fetchUser = async () => {
+                try {
+                const res = await axios.get(`https://quizlet-01.nw.r.appspot.com/api/v1/users/${userID}`, {
+                    headers: {
+                        Authorization: `Bearer ${Cookies.get('jwt')}`
+                    }
+                });
+                setUserData(res.data.user);
+            } catch (err) {
+                localStorage.removeItem('userID');
+                window.location.href = '/login';
+            }
+            }
+        fetchUser();
+    }, []);
+
+    const editField = (e, field) => {
+        e.preventDefault();
+        setReadOnlyFields({
+            ...readOnlyFields,
+            [field]: false
+        });
+    }
+
+    const updateField = (e, field) => {
+        e.preventDefault();
+        setReadOnlyFields({
+            ...readOnlyFields,
+            [field]: true
+        });
+        const value = document.querySelector(`#${field}-field`).value;
+        axios.patch(`https://quizlet-01.nw.r.appspot.com/api/v1/users/${userID}`, {
+            [field]: value,
+            headers: {
+                Authorization: `Bearer ${Cookies.get('jwt')}`
+            }
+        }).then(() => {
+            window.location.reload();
+        }).catch((err) => {
+            console.log(err);
+        });
+    }
+
+    return (
+        <div className='set-scroll page-view'>
+            <form className='form-format'>
+                <div className='detail-block'>
+                    <label>Name</label>
+                    <input id='name-field' placeholder={userData.name} readOnly={readOnlyFields.name} />
+                    {readOnlyFields.name ? <button onClick={(e) => editField(e, 'name')}>Edit</button> :
+                        <button onClick={(e) => updateField(e, 'name')}>Update</button>}
+                </div>
+                <div className='detail-block'>
+                    <label>Email</label>
+                    <input id='email-field' placeholder={userData.email} readOnly={readOnlyFields.email} />
+                    {readOnlyFields.email === true ? <button onClick={(e) => editField(e, 'email')}>Edit</button> :
+                        <button onClick={(e) => updateField(e, 'email')}>Update</button>}
+                </div>
+                <div className='detail-block'>
+                    <label>Password</label>
+                    <input id='password-field' placeholder='********' readOnly={readOnlyFields.password} />
+                    {readOnlyFields.password === true ? <button onClick={(e) => editField(e, 'password')}>Edit</button> :
+                        <button onClick={(e) => updateField(e, 'password')}>Update</button>}
+                </div>
+            </form>
+        </div>
+    )
+
+
+}
+
+export default MyAccount

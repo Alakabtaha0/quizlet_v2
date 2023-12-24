@@ -1,0 +1,26 @@
+.inf-scroll-view {
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+.view-box {
+    height: 85%;
+    width: 70%;
+    float: right;
+    margin-right: 60px;
+}
+
+/* fit container on handheld devices*/
+@media screen and (max-width: 768px) {
+    .view-box {
+        width: 100%;
+        height: calc(100% - 84px);
+        margin-right: 0px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .view-box {
+        height: calc(100% - 80px);
+    }
+}
