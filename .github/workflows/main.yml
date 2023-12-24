@@ -4,6 +4,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - name: build front end
+      run: cd frontend-admin && npm run build
+      
+    - name: delete back end build file, copy front end build, paste back end build
+      run: rm -r backend/public/build && cp -r frontend-admin/build backend/public
+    
     - name: Checkout code
       uses: actions/checkout@v4
 
