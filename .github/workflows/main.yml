@@ -6,6 +6,9 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
+
+    - name: install dependencies
+      run: cd frontend-admin && npm install
       
     - name: build front end
       run: cd frontend-admin && npm run build
