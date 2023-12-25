@@ -12,6 +12,10 @@ const xss = require('xss-clean');
 const mongoSanitize = require('express-mongo-sanitize');
 const hpp = require('hpp');
 const cors = require('cors');
+const mime = express.static.mime;
+
+// Define custom mime types
+mime.define({'application/javascript': ['js']});
 
 // Serve the static files from the React app
 const reactApp = path.join(__dirname, 'public', 'build');
