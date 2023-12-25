@@ -14,14 +14,9 @@ const hpp = require('hpp');
 const cors = require('cors');
 const mime = express.static.mime;
 
-// Define custom mime types
-mime.define({'application/javascript': ['js']});
-
-// Serve the static files from the React app
-const reactApp = path.join(__dirname, 'public', 'build');
 
 // Render the react page - Serving static files
-app.use(express.static(reactApp));
+app.use(express.static('public/build'));
 
 // Global Middle wares
 app.use(cors());
@@ -37,7 +32,6 @@ const limiter = rateLimit({
 
 // only limit the /api route
 app.use('/api', limiter);
-
 
 // Body parser, reading data from body into req.body
 app.use(express.json({ limit: '10kb' }));
@@ -67,7 +61,8 @@ app.use('/api/v1/answers', answerRouter);
 app.use('/api/v1/questions', questionRouter);
 
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'build', 'index.html'));
+    // Serve the static files from the React app
+    res.sendFile(path.resolve(__dirname, 'public', 'build', 'index.html'));
 });
 
 module.exports = app;
