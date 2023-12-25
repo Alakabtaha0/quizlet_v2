@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Cookies from 'js-cookie';
-import axios from 'axios';
 import './styles/global.css';
 import Login from './pages/login';
 import Dashboard from './pages/dashboard';

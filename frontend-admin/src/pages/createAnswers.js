@@ -1,5 +1,4 @@
 import React from 'react'
-import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Cookies from 'js-cookie';
 import '../styles/createanswers.css';
@@ -32,15 +31,17 @@ const CreateAnswers = () => {
             headers: {
                 Authorization: `Bearer ${Cookies.get('jwt')}`
             }
+        }).then((res) => {
+            console.log('response', res);
         }).catch((err) => {
-            console.log(err);
+            if (err.response.status === 401) {
+                localStorage.removeItem('userID');
+                Cookies.remove('jwt');
+                window.location.href = '/login';
+            }
         });
     }
 
-    if (!Cookies.get('jwt')) {
-        localStorage.removeItem('userID');
-        window.location.href = '/login';
-    }
 	return (
         <div className='page-view set-scroll'>
             <h1>Create an Answer</h1>

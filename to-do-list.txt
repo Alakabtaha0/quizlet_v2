@@ -30,14 +30,6 @@
 // If someone's logged in, he can't access log in or sign up page - DONE
 // make cookie decoder a middle ware and make user info accessible to controllers -- DONE
 // CREATE FRONT END TO DISPLAY WORK -- DONE
-NOW WE NEED TO CREATE A VERIFICATION CODE
-AFTER WE CREATE A VERIFICATION CODE, SEND IT TO THE EMAIL
-ENTER THE CODE IN THE FIELD PROVIDED
-IF IT'S THE CORRECT CODE CONTINUE OTHERWISE DON'T
-******************************************************
-******************************************************
-******************************************************
-******************************************************
 /////// DEPLOYMENT ///////
 Deploy mongoDB cluster using atlas -- DONE
  -- Connect the backend server to mongoDB using new config -- DONE
@@ -45,8 +37,19 @@ Make server display static react app -- DONE
 Deploy Server to google app engine -- DONE
 CI/CD github actions -- DONE
  - Now we just need to upload the frontend-admin to github
- - Create the .yaml file to build the front end first then, replace the file in the back end, then deploy
-Deploy front end using github actions
+ - Create the .yaml file to build the front end first then, 
+ replace the file in the back end, then deploy - DONE
+Deploy front end using github actions - DONE
+NOW WE NEED TO CREATE A VERIFICATION CODE
+AFTER WE CREATE A VERIFICATION CODE, SEND IT TO THE EMAIL
+ENTER THE CODE IN THE FIELD PROVIDED
+IF IT'S THE CORRECT CODE CONTINUE OTHERWISE DON'T
+// REFACTOR CODE SO THAT IT TAKES YOU BACK TO LOG IN IF THE RES IS A 404 -- DONE
+******************************************************
+******************************************************
+******************************************************
+******************************************************
+
 
 
 

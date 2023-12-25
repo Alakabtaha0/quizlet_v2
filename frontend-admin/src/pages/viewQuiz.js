@@ -18,8 +18,11 @@ const ViewQuiz = ({quiz, setData}) => {
 				});
 				setData(res.data.quiz);
 			} catch (err) {
-				console.log(err);
-				window.location.href = '/login';
+				if (err.response.status === 401) {
+                    localStorage.removeItem('userID');
+                    Cookies.remove('jwt');
+                    window.location.href = '/login';
+                }
 			}
 		};
 		if (jwt) {
@@ -35,11 +38,7 @@ const ViewQuiz = ({quiz, setData}) => {
 				<p>No Quiz Found, try creating one</p>
 			</div>
 		)
-	} else if (!Cookies.get('jwt')) {
-		console.log('no cookies');
-		localStorage.removeItem('userID');
-		window.location.href = '/login';
-	}
+	} 
 
     return (
 		<div className='set-scroll page-view'>

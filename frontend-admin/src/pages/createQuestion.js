@@ -19,8 +19,11 @@ const CreateQuestion = () => {
                 });
                 setAnswers(res.data.answers);
             } catch (err) {
-                localStorage.removeItem('userID');
-                window.location.href = '/login';
+                if (err.response.status === 401) {
+                    localStorage.removeItem('userID');
+                    Cookies.remove('jwt');
+                    window.location.href = '/login';
+                }
             }
         }
         fetchAnswers();
@@ -46,7 +49,11 @@ const CreateQuestion = () => {
                 Authorization: `Bearer ${Cookies.get('jwt')}`
             }
         }).catch((err) => {
-            console.log(err);
+            if (err.response.status === 401) {
+                localStorage.removeItem('userID');
+                Cookies.remove('jwt');
+                window.location.href = '/login';
+            }
         });
     }
 

@@ -16,7 +16,7 @@ const MyAccount = () => {
     // Get user information
     useEffect(() => {
         const fetchUser = async () => {
-                try {
+            try {
                 const res = await axios.get(`https://quizlet-01.nw.r.appspot.com/api/v1/users/${userID}`, {
                     headers: {
                         Authorization: `Bearer ${Cookies.get('jwt')}`
@@ -24,10 +24,13 @@ const MyAccount = () => {
                 });
                 setUserData(res.data.user);
             } catch (err) {
-                localStorage.removeItem('userID');
-                window.location.href = '/login';
+                if (err.response.status === 401) {
+                    localStorage.removeItem('userID');
+                    Cookies.remove('jwt');
+                    window.location.href = '/login';
+                }
             }
-            }
+        }
         fetchUser();
     }, []);
 
@@ -54,7 +57,11 @@ const MyAccount = () => {
         }).then(() => {
             window.location.reload();
         }).catch((err) => {
-            console.log(err);
+            if (err.response.status === 401) {
+                localStorage.removeItem('userID');
+                Cookies.remove('jwt');
+                window.location.href = '/login';
+            }
         });
     }
 
