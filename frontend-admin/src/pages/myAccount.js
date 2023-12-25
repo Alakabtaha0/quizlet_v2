@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Cookies from 'js-cookie';
 import '../styles/myaccount.css';
@@ -12,7 +13,7 @@ const MyAccount = () => {
     });
     const [userData, setUserData] = useState({});
     const userID = localStorage.getItem('userID');
-
+    const navigate = useNavigate();
     // Get user information
     useEffect(() => {
         const fetchUser = async () => {
@@ -27,7 +28,8 @@ const MyAccount = () => {
                 if (err.response.status === 401) {
                     localStorage.removeItem('userID');
                     Cookies.remove('jwt');
-                    window.location.href = '/login';
+                    navigate('/login');
+                    //window.location.href = '/login';
                 }
             }
         }
@@ -61,7 +63,8 @@ const MyAccount = () => {
             if (err.response.status === 401) {
                 localStorage.removeItem('userID');
                 Cookies.remove('jwt');
-                window.location.href = '/login';
+                navigate('/login');
+                //window.location.href = '/login';
             }
         });
     }

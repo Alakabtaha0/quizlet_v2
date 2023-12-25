@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Cookies from 'js-cookie';
 import '../styles/createquestion.css';
@@ -9,6 +10,8 @@ import '../styles/createquestion.css';
 const CreateQuestion = () => {
     const [answers, setAnswers] = useState(null);
     const [placement, setPlacement] = useState([]);
+    const navigate = useNavigate();
+
     useEffect(() => {
         const fetchAnswers = async () => {
             try {
@@ -22,7 +25,8 @@ const CreateQuestion = () => {
                 if (err.response.status === 401) {
                     localStorage.removeItem('userID');
                     Cookies.remove('jwt');
-                    window.location.href = '/login';
+                    navigate('/login');
+                    //window.location.href = '/login';
                 }
             }
         }
@@ -52,7 +56,7 @@ const CreateQuestion = () => {
             if (err.response.status === 401) {
                 localStorage.removeItem('userID');
                 Cookies.remove('jwt');
-                window.location.href = '/login';
+                navigate('/login');
             }
         });
     }

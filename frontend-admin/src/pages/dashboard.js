@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Cookies from 'js-cookie';
 import '../styles/dashboard.css';
@@ -9,6 +10,7 @@ import '../styles/dashboard.css';
 const Dashboard = () => {
     const [questions, setQuestions] = useState([]);
     const [placement, setPlacement] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchAnswers = async () => {
@@ -23,7 +25,7 @@ const Dashboard = () => {
                 if (err.response.status === 401) {
                     localStorage.removeItem('userID');
                     Cookies.remove('jwt');
-                    window.location.href = '/login';
+                    navigate('/login');
                 }
             }
         }
@@ -56,7 +58,7 @@ const Dashboard = () => {
             if (err.response.status === 401) {
                 localStorage.removeItem('userID');
                 Cookies.remove('jwt');
-                window.location.href = '/login';
+                navigate('/login');
             }
         });
     }

@@ -1,14 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Cookies from 'js-cookie';
 import '../styles/login.css';
 
 
-const Login = () => {
-    
-    console.log('Testing CI/CD');
-    
+const Login = ({setUpdate}) => {
+    const navigate = useNavigate();
+
     const incorrectLogin = () => {
         const incorrect = document.querySelector('#incorrect-indicator-1');
         incorrect.classList.remove('hidden');
@@ -25,25 +24,27 @@ const Login = () => {
         }).then((res) => {
             Cookies.set('jwt', res.data.token);
             localStorage.setItem('userID', res.data.user._id);
-            window.location.href = '/dashboard';
+            navigate('/dashboard'); 
+            setUpdate(update => !update);
         }).catch((err) => {
             console.log(err);
             incorrectLogin();
         });
     }
-        return (
 
-            <div className='log-display-box center-origin'>
-                <h1 className='comp-title-h1'>SIGN IN TO YOUR ACCOUNT</h1>
-                <div className='log-input'>
-                    <input type='text' className='log-fields' placeholder='Email'></input>
-                    <input type='password' className='log-fields' placeholder='Password'></input>
-                    <p id='incorrect-indicator-1' className='hidden'>Incorrect Username Or Password, Please Try Again</p>
-                    <button className='log-fields log-btn' onClick={onSubmit}>Submit</button>
-                </div>
-                <p className='comp-title-h1'>Don't have an account? <Link to='/sign-up'>Sign up here</Link></p>
+    return (
+
+        <div className='log-display-box center-origin'>
+            <h1 className='comp-title-h1'>SIGN IN TO YOUR ACCOUNT</h1>
+            <div className='log-input'>
+                <input type='text' className='log-fields' placeholder='Email'></input>
+                <input type='password' className='log-fields' placeholder='Password'></input>
+                <p id='incorrect-indicator-1' className='hidden'>Incorrect Username Or Password, Please Try Again</p>
+                <button className='log-fields log-btn' onClick={onSubmit}>Submit</button>
             </div>
-        )
-    }
+            <p className='comp-title-h1'>Don't have an account? <Link to='/sign-up'>Sign up here</Link></p>
+        </div>
+    )
+}
 
-    export default Login;
+export default Login;

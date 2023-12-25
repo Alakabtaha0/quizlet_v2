@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/global.css";
 import Cookies from "js-cookie";
 import axios from "axios";
@@ -78,6 +79,7 @@ const Step2 = ({setStep}) => {
 }
 
 const Step3 = ({setStep}) => {
+	const navigate = useNavigate();
 	const onSubmit = () => {
 
 		// Create payload
@@ -91,7 +93,8 @@ const Step3 = ({setStep}) => {
 			}
 		}).then((res) => {
 			localStorage.setItem('userID', res.data.newUser._id);
-			window.location.href = '/dashboard';
+			navigate('/dashboard');
+			//window.location.href = '/dashboard';
 		}).catch((err) => {
 			console.log(err);
 		});

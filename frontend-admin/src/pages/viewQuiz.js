@@ -1,4 +1,5 @@
 import React, {useEffect} from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import '../styles/viewquiz.css';
 import Quizwidget from '../components/Quizwidget';
@@ -7,6 +8,7 @@ import Cookies from "js-cookie";
 
 
 const ViewQuiz = ({quiz, setData}) => {
+	const navigate = useNavigate();
 	const jwt = Cookies.get('jwt');
 	useEffect(() => {
 		const fetchData = async () => {
@@ -21,7 +23,8 @@ const ViewQuiz = ({quiz, setData}) => {
 				if (err.response.status === 401) {
                     localStorage.removeItem('userID');
                     Cookies.remove('jwt');
-                    window.location.href = '/login';
+					navigate('/login');
+                    //window.location.href = '/login';
                 }
 			}
 		};

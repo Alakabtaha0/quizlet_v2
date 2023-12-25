@@ -14,16 +14,16 @@ import SignUp from './pages/signup';
 
 function App() {
 	const [data, setData] = useState([]);
+	const [update, setUpdate] = useState(false);
 	const jwt = Cookies.get('jwt');
 
 	return (
-
 		<Router>
-			
 			<div className="set-page">
 				{jwt && <SideNav />}
 					<Routes>
-						{!jwt && <Route path='/login' element={<Login setData={setData} />} />}
+						<Route path='/' element={<Login setUpdate={setUpdate}/>} />
+						{!jwt && <Route path='/login' element={<Login setUpdate={setUpdate}/>} />}
 						<Route path='/dashboard' element={<Dashboard />} />
 						<Route path='/create-question' element={<CreateQuestion />} />
 						<Route path='/create-answers' element={<CreateAnswers />} />
