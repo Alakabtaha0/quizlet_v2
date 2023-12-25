@@ -63,7 +63,7 @@ const Dashboard = () => {
 
     const pushElement = (e) => {
         const selectedId = e.target.value;
-        const selectedText = e.target.options[e.target.selectedIndex].text;
+        // const selectedText = e.target.options[e.target.selectedIndex].text;
 
         // Remove question from questions array so user can't select twice
         // Add it to placement array (p)

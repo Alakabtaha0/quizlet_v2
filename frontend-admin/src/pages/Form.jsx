@@ -1,5 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
 import '../styles/form.css';
 
 
@@ -11,10 +10,10 @@ import '../styles/form.css';
 
 const Form = ({ quiz }) => {
     const [currentQuestion, setCurrentQuestion] = useState(0);
-    const { name, questions, _id } = quiz;
+    const { name, questions } = quiz;
     // Send the payload to the backend LATER
     // Need to create routes with completed quiz data
-    const payload = {};
+    // const payload = {};
 
     // Get index of question
     // Render the question

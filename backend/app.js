@@ -62,7 +62,7 @@ app.use('/api/v1/results', resultsRouter);
 app.use('/api/v1/answers', answerRouter);
 app.use('/api/v1/questions', questionRouter);
 
-app.get('/*', (req, res) => {
+app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'build', 'index.html'));
 });
 

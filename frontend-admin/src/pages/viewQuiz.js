@@ -28,6 +28,7 @@ const ViewQuiz = ({quiz, setData}) => {
 		if (jwt) {
 			fetchData();
 		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [jwt]);
 
 	if (!quiz) {
