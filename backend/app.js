@@ -15,8 +15,10 @@ const cors = require('cors');
 
 // Serve the static files from the React app
 const reactApp = path.join(__dirname, 'public', 'build');
+
 // Render the react page - Serving static files
 app.use(express.static(reactApp));
+
 // Global Middle wares
 app.use(cors());
 // Set security HTTP Headers

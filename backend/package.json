@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "First Back end server",
   "main": "server.js",
-  "homepage": "https://quizlet-01.nw.r.appspot.com/",
+  "homepage": "https://quizlet-01.nw.r.appspot.com/public/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
