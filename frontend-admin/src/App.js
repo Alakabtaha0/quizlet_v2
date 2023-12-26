@@ -12,6 +12,7 @@ import MyAccount from './pages/myAccount';
 import Form from './pages/Form';
 import SignUp from './pages/signup';
 
+
 function App() {
 	const [data, setData] = useState([]);
 	const [update, setUpdate] = useState(false);

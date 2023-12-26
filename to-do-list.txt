@@ -47,6 +47,10 @@ IF IT'S THE CORRECT CODE CONTINUE OTHERWISE DON'T
 // REFACTOR CODE SO THAT IT TAKES YOU BACK TO LOG IN IF THE RES IS A 404 -- DONE
 // Connect front end to back end -- DONE
 // SORT OUT CONFIG.ENV and allow access to the config file -- DONE
+// / path doesn't work when deploying - DONE
+// WHITE SCREEN OF DEATH - DONE 
+// Make mobile optimized -- DONE (KINDA)
+// Create sign out button - DONE
 ******************************************************
 ******************************************************
 ******************************************************
@@ -54,21 +58,22 @@ IF IT'S THE CORRECT CODE CONTINUE OTHERWISE DON'T
 
 
 /// WHAT NEEDS TO BE DONE
-// Create sign out button
-// Hash and salt passwords
-// Apply validation to all routes
+// Delete account button
+// Validate password on front end
 // Display users name and other details
+// Hash and salt passwords
+// Add email validation to see if user is already signed up or if email even works
+// Apply validation to all routes
 // Data santization
-// Do password verification (make sure both passwords match)
 // Allow user to reset password
 // Add filtering to quizController (content type, number of questions - filter bar for later)
 // Some sorting implemented, come back and make it better
 
+
 // BUGS *******
 // If someones account gets deleted it just constantly makes request
 // If you switch around the name and email it just breaks the database
-// / path doesn't work when deploying - PENDING
-// WHITE SCREEN OF DEATH - PENDING
+
 
 // for the pages make a:
 // -- Update details page

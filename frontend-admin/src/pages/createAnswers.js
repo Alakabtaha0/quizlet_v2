@@ -5,7 +5,6 @@ import Cookies from 'js-cookie';
 import '../styles/createanswers.css';
 
 
-
 const CreateAnswers = () => {
     const navigate = useNavigate();
 
@@ -46,6 +45,7 @@ const CreateAnswers = () => {
     }
 
     return (
+       
         <div className='page-view set-scroll'>
             <h1>Create an Answer</h1>
             <form className='form-format'>

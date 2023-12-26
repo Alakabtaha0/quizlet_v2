@@ -4,7 +4,7 @@
     overflow-x: hidden;
     transition: 0.5s;
     width: 250px;
-    z-index: 1;
+    z-index: 2;
 }
 
 .nav-form {
@@ -22,6 +22,79 @@
     transition: 0.3s;
 }
 
+.nav-form a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: 600;
+}
+
 .nav-form li:hover {
     background-color: #e6e6e6;
+}
+
+.burger-btn {
+    flex-direction: column;
+    justify-content: space-around;
+    width: 2rem;
+    height: 2rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+    display: none;
+}
+
+.burger-btn div {
+    display: none;
+    width: 30px;
+    height: 5px;
+    margin: 1px;
+    background: #333;
+    border-radius: 10px;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 1px;
+}
+
+.burger-btn.open div:nth-child(1) {
+    transform: rotate(45deg);
+}
+
+.burger-btn.open div:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-btn.open div:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+/* Media Queries for ipad and iphone*/
+@media screen and (max-width: 768px) and (min-width: 500px) {
+    .side-nav {
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .side-nav {
+        display: block;
+        width: 100%;
+        height: 40px;
+        top: 0;
+    }
+
+    .nav-form {
+        display: none;
+        padding: 0;
+    }
+
+    .burger-btn {
+        display: flex;
+    }
+
+    .burger-btn div {
+        display: block;
+    }
 }

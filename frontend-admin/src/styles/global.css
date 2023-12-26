@@ -32,3 +32,11 @@
 .set-scroll {
     overflow-y: scroll;
 }
+
+/* media query for iphone */
+@media screen and (max-width: 500px) {
+    .set-page {
+        display: block;
+        width: 100%;
+    }
+} 

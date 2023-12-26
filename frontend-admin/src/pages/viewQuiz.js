@@ -10,10 +10,11 @@ import Cookies from "js-cookie";
 const ViewQuiz = ({quiz, setData}) => {
 	const navigate = useNavigate();
 	const jwt = Cookies.get('jwt');
+
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				const res = await axios.get(`https://quizlet-01.nw.r.appspot.com//api/v1/quiz`, {
+				const res = await axios.get(`https://quizlet-01.nw.r.appspot.com/api/v1/quiz`, {
 					headers: {
 						Authorization: `Bearer ${jwt}`
 					}
@@ -28,11 +29,11 @@ const ViewQuiz = ({quiz, setData}) => {
                 }
 			}
 		};
-		if (jwt) {
-			fetchData();
-		}
+
+		fetchData();
+
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [jwt]);
+	}, []);
 
 	if (!quiz) {
 		console.log('here');

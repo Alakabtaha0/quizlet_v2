@@ -6,7 +6,6 @@ import Cookies from 'js-cookie';
 import '../styles/createquestion.css';
 
 
-
 const CreateQuestion = () => {
     const [answers, setAnswers] = useState(null);
     const [placement, setPlacement] = useState([]);
