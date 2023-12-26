@@ -19,8 +19,11 @@ app.use(express.static('public/build'));
 
 // Global Middle wares
 app.use(cors());
+
 // Set security HTTP Headers
-app.use(helmet());
+app.use(helmet({
+    xContentTypeOptions: false,
+}));
 
 // Rate limiter to avoid getting Ddos'd
 const limiter = rateLimit({
