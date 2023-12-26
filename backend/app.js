@@ -64,4 +64,7 @@ app.get('/*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'public', 'build', 'index.html'));
 });
 
+app.get('/', (req, res) => {
+    res.send(<h1>Hello from the '/'</h1>);
+})
 module.exports = app;
