@@ -35,8 +35,7 @@ function App() {
 								<Route path={`/view-quiz/${quiz.slug}`} element={<Form quiz={quiz} />} />
 							)
 						})}
-						<Route path='*' element={<Dashboard />} />
-						<Route path='*' element={jwt ? <Dashboard /> : <Login />} />
+						<Route path='' element={jwt ? <Dashboard /> : <Login />} />
 					</Routes>
 			</div>
 		</Router>
