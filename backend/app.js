@@ -65,6 +65,6 @@ app.get('/*', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-    res.send(<h1>Hello from the '/'</h1>);
+    res.send('<h1>Hello from the '/'</h1>');
 })
 module.exports = app;
