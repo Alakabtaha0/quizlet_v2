@@ -10,11 +10,11 @@ jobs:
     - name: install dependencies
       run: cd frontend-admin && npm install
       
-    - name: build front end
-      run: cd frontend-admin && CI=false npm run build
+    # - name: build front end
+    #   run: cd frontend-admin && CI=false npm run build
       
-    - name: delete back end build file, copy front end build, paste back end build
-      run: rm -r backend/public/build && cp -r frontend-admin/build backend/public
+    # - name: delete back end build file, copy front end build, paste back end build
+    #   run: rm -r backend/public/build && cp -r frontend-admin/build backend/public
 
     - name: Set up Google Cloud SDK
       uses: google-github-actions/setup-gcloud@main
