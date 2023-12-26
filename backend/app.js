@@ -59,6 +59,10 @@ app.use('/api/v1/results', resultsRouter);
 app.use('/api/v1/answers', answerRouter);
 app.use('/api/v1/questions', questionRouter);
 
+app.get('/', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'public', 'build', 'index.html'));
+})
+
 app.get('/*', (req, res) => {
     // Serve the static files from the React app
     res.sendFile(path.resolve(__dirname, 'public', 'build', 'index.html'));
