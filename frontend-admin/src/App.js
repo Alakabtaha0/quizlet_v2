@@ -22,7 +22,7 @@ function App() {
 			<div className="set-page">
 				{jwt && <SideNav />}
 					<Routes>
-						<Route path='/' element={<Login setUpdate={setUpdate}/>} />
+						<Route path='' element={<Login setUpdate={setUpdate}/>} />
 						{!jwt && <Route path='/login' element={<Login setUpdate={setUpdate}/>} />}
 						<Route path='/dashboard' element={<Dashboard />} />
 						<Route path='/create-question' element={<CreateQuestion />} />
