@@ -62,8 +62,7 @@ app.use('/api/v1/questions', questionRouter);
 
 app.get('/*', (req, res) => {
     // Serve the static files from the React app
-    res.type('application/javascript');
-    res.sendFile(path.resolve(__dirname, 'public', 'build', 'index.html'));
+    res.sendFile(path.resolve(__dirname, 'public', 'build'));
 });
 
 module.exports = app;
