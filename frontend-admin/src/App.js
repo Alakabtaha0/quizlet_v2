@@ -35,6 +35,7 @@ function App() {
 								<Route path={`/view-quiz/${quiz.slug}`} element={<Form quiz={quiz} />} />
 							)
 						})}
+						<Route path='*' element={<Dashboard />}/>
 					</Routes>
 			</div>
 		</Router>
