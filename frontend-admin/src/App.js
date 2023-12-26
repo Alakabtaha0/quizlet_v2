@@ -30,7 +30,7 @@ function App() {
 						<Route path='/create-answers' element={<CreateAnswers />} />
 						<Route path='/view-quiz' element={<ViewQuiz quiz={data} setData={setData} />} />
 						<Route path='/my-account' element={<MyAccount />} />
-						{!localStorage.getItem('userID') && <Route path='/sign-up' element={<SignUp />} />}
+						{!localStorage.getItem('userID') && <Route path='/sign-up' element={<SignUp setUpdate={setUpdate}/>} />}
 						{data && data.map((quiz, index) => {
 							return (
 								<Route path={`/view-quiz/${quiz.slug}`} element={<Form quiz={quiz} />} />

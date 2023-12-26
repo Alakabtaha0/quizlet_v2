@@ -4,9 +4,9 @@ import "../styles/global.css";
 import Cookies from "js-cookie";
 import axios from "axios";
 
-const SignUp = () => {
+const SignUp = ({ setUpdate }) => {
 	const [step, setStep] = useState(1);
-	const currentPage = [<Step1 setStep={setStep} />, <Step2 setStep={setStep} />, <Step3 setStep={setStep} />];
+	const currentPage = [<Step1 setStep={setStep} />, <Step2 setStep={setStep} />, <Step3 setStep={setStep} setUpdate={setUpdate}/>];
 
   return (
 		<>
@@ -78,9 +78,15 @@ const Step2 = ({setStep}) => {
 	)
 }
 
-const Step3 = ({setStep}) => {
+const Step3 = ({setUpdate}) => {
 	const navigate = useNavigate();
+	const [correctPassword, setCorrectPassword] = useState(false);
 	const onSubmit = () => {
+		// Make sure password and confirm password match
+		if (document.querySelector('#password-field').value !== document.querySelector('#confirm-password-field').value) {
+			setCorrectPassword(true);
+			return;
+		}
 
 		// Create payload
 		const payload = {
@@ -93,6 +99,7 @@ const Step3 = ({setStep}) => {
 			}
 		}).then((res) => {
 			localStorage.setItem('userID', res.data.newUser._id);
+			setUpdate(update => !update);
 			navigate('/dashboard');
 			//window.location.href = '/dashboard';
 		}).catch((err) => {
@@ -106,6 +113,8 @@ const Step3 = ({setStep}) => {
 			<div className="log-input">
 				{/* Add password validation i.e. confirm password */}
 				<input id='password-field' type="password" className="log-fields" placeholder="Password" />
+				<input id='confirm-password-field' type="password" className="log-fields" placeholder="Confirm Password" />
+				{correctPassword && <p>Passwords do not match, please reenter</p>}
 				<button className="log-fields log-btn" onClick={onSubmit}>Submit</button>
 			</div>
 		</div>

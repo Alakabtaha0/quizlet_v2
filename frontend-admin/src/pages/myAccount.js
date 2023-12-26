@@ -69,6 +69,26 @@ const MyAccount = () => {
         });
     }
 
+    const deleteAccount = () => {
+        axios.delete(`https://quizlet-01.nw.r.appspot.com/api/v1/users/${userID}`, {
+            headers: {
+                Authorization: `Bearer ${Cookies.get('jwt')}`
+            }
+        }).then(() => {
+            console.log('Account deleted');
+            localStorage.removeItem('userID');
+            Cookies.remove('jwt');
+            navigate('/login'); 
+        }).catch((err) => {
+            if (err.response.status === 401) {
+                console.log('Error Block');
+                localStorage.removeItem('userID');
+                Cookies.remove('jwt');
+                navigate('/login');
+            }
+        });
+    }
+
     return (
         <div className='set-scroll page-view'>
             <form className='form-format'>
@@ -89,6 +109,10 @@ const MyAccount = () => {
                     <input id='password-field' placeholder='********' readOnly={readOnlyFields.password} />
                     {readOnlyFields.password === true ? <button onClick={(e) => editField(e, 'password')}>Edit</button> :
                         <button onClick={(e) => updateField(e, 'password')}>Update</button>}
+                </div>
+                <div className='detail-block'>
+                    <label>Delete Account</label>
+                    <button onClick={deleteAccount}>Delete Account</button>
                 </div>
             </form>
         </div>
