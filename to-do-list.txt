@@ -53,6 +53,7 @@ IF IT'S THE CORRECT CODE CONTINUE OTHERWISE DON'T
 // Create sign out button -- DONE
 // Delete account button -- DONE
 // Validate password on front end (Confirm Password) -- DONE
+// Display users name and other details -- Done
 ******************************************************
 ******************************************************
 ******************************************************
@@ -60,7 +61,6 @@ IF IT'S THE CORRECT CODE CONTINUE OTHERWISE DON'T
 
 
 /// WHAT NEEDS TO BE DONE
-// Display users name and other details
 // Hash and salt passwords
 // Add email validation to see if user is already signed up or if email even works
 // Apply validation to all routes
@@ -81,9 +81,6 @@ IF IT'S THE CORRECT CODE CONTINUE OTHERWISE DON'T
 // Make seperate pages for admin and users
 // Hash the password then pass it into database - do data validation in front end
 // When you upload data there needs to be an answered section to store all of the answers
-
-//WHAT NEEDS TO GET DONE THAT YOU'VE SKIPPED:
-
 
 // SIDE QUESTS
 // create seperate files Handling errors and different RES. make code more succinct

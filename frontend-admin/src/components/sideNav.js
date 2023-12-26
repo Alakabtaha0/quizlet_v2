@@ -1,10 +1,38 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useNavigate } from 'react-router-dom';
+import axios from "axios";
 import '../styles/sideNav.css';
 import Cookies from "js-cookie";
 
 const SideNav = () => {
 	const navigate = useNavigate();
+	var userName;
+
+	useEffect(() => {
+		const fetchUser = async () => {
+			try {
+				const res = await axios.get(`https://quizlet-01.nw.r.appspot.com/api/v1/users/${localStorage.getItem('userID')}`, {
+					headers: {
+						Authorization: `Bearer ${Cookies.get('jwt')}`
+					}
+				});
+	
+				userName = res.data.user.name;
+				document.querySelector('.side-nav p').innerHTML = `Welcome ${userName}`;
+			} catch (err) {
+				if (err.response.status === 401) {
+					localStorage.removeItem('userID');
+					Cookies.remove('jwt');
+					navigate('/login');
+					//window.location.href = '/login';
+				}
+			}
+		}
+
+		fetchUser();
+
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 
 	const logout = () => {
 		localStorage.removeItem('userID');
@@ -37,6 +65,7 @@ const SideNav = () => {
 				<div></div>
 				<div></div>
 			</div>
+			<p></p>
 			<ul className="nav-form">
 				<Link to='/dashboard'><li>Create Quiz</li></Link>
 				<Link to='/create-question'><li>Create Question</li></Link>
