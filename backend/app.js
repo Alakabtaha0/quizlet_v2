@@ -15,15 +15,13 @@ const cors = require('cors');
 
 
 // Render the react page - Serving static files
-app.use(express.static('public/build'));
+app.use(express.static(path.join(__dirname, 'public/build')));
 
 // Global Middle wares
 app.use(cors());
 
 // Set security HTTP Headers
-app.use(helmet({
-    xContentTypeOptions: false,
-}));
+app.use(helmet());
 
 // Rate limiter to avoid getting Ddos'd
 const limiter = rateLimit({
