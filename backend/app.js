@@ -64,7 +64,4 @@ app.get('/*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'public', 'build', 'index.html'));
 });
 
-app.get('/', (req, res) => {
-    res.send("<h1>Quiz App from /</h1>");
-})
 module.exports = app;
