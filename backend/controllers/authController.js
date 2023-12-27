@@ -58,10 +58,12 @@ exports.finishSignUp = catchAsync(async (req, res, next) => {
 	}
 	// 2) Upload password to database
 	const password = req.body.password;
-	let newUser;
+	let newUser = await User.findById(user._id);
 	try {
 		// The .select is to control what gets sent back, do this for all the functions
-		newUser = await User.findByIdAndUpdate(user._id,  {password: password} , { new: true, runValidators: true }).select('-__v -verificationCode -verified -passwordChangeAt -createdAt');
+		//newUser = await User.findByIdAndUpdate(user._id,  {password: password} , { new: true, runValidators: true }).select('-__v -verificationCode -verified -passwordChangeAt -createdAt');
+		newUser.password = password;
+		await newUser.save();
 	} catch (err) {
 		return res.status(400).json({
 			status: 'fail',

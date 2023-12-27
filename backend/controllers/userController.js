@@ -36,7 +36,8 @@ module.exports.getUser = catchAsync( async (req, res, next) => {
 });
 
 module.exports.updateUser = catchAsync( async (req, res, next) => {
-    const user = await Users.findByIdAndUpdate(req.params.id, req.body);
+
+    const user = await Users.findById(req.params.id);
 
     if(!user) {
         res.status(404).json({
@@ -45,9 +46,23 @@ module.exports.updateUser = catchAsync( async (req, res, next) => {
         });
     }
 
+    if (req.body.password) {
+        const newPass = await Users.findById(req.params.id);
+        newPass.password = req.body.password;
+        await newPass.save();
+        return res.status(202).json({
+            status: 'success',
+            message: 'successfully updated your password'
+        });
+    } else {
+        await Users.findByIdAndUpdate(req.params.id, req.body);
+    }
+
+    
+
     res.status(202).json({
         status: 'success',
-        message: 'successfully updated user'
+        message: `successfully updated user`
     })
     
 });

@@ -54,14 +54,12 @@ IF IT'S THE CORRECT CODE CONTINUE OTHERWISE DON'T
 // Delete account button -- DONE
 // Validate password on front end (Confirm Password) -- DONE
 // Display users name and other details -- Done
+// Hash and salt passwords -- DONE
 ******************************************************
 ******************************************************
 ******************************************************
 ******************************************************
-
-
 /// WHAT NEEDS TO BE DONE
-// Hash and salt passwords
 // Add email validation to see if user is already signed up or if email even works
 // Apply validation to all routes
 // Data santization
