@@ -13,23 +13,38 @@ const CreateAnswers = () => {
         // Send it to the backend
         // Create the quiz
         e.preventDefault();
-
         const text = document.querySelector('#name-03').value;
-        const image = document.querySelector('#image-01').value;
+        const image = document.querySelector('#image-01').files[0];
         const audio = document.querySelector('#audio-01').value;
         if (text === '' || image === '') {
             alert('Please fill out all fields');
             return;
         }
-        const payload = {
-            text,
-            image,
-        }
+
+       
+        // axios.post('https://quizlet-01.nw.r.appspot.com/api/v1/answers', payload, {
+        //     headers: {
+        //         Authorization: `Bearer ${Cookies.get('jwt')}`
+        //     }
+        // }).then((res) => {
+        //     console.log('response', res);
+        // }).catch((err) => {
+        //     if (err.response.status === 401) {
+        //         localStorage.removeItem('userID');
+        //         Cookies.remove('jwt');
+        //         navigate('/login');
+        //         //window.location.href = '/login';
+        //     }
+        // });
+        const formData = new FormData();
+        formData.append('image', image);
+        formData.append('text', text);
         if (audio !== '') {
-            payload.audio = audio;
+            formData.append('audio', audio);
         }
-        axios.post('https://quizlet-01.nw.r.appspot.com/api/v1/answers', payload, {
+        axios.post('http://localhost:8000/api/v1/answers', formData, {
             headers: {
+                'Content-Type': 'multipart/form-data',
                 Authorization: `Bearer ${Cookies.get('jwt')}`
             }
         }).then((res) => {
@@ -45,7 +60,7 @@ const CreateAnswers = () => {
     }
 
     return (
-       
+
         <div className='page-view set-scroll'>
             <h1>Create an Answer</h1>
             <form className='form-format'>
@@ -54,8 +69,8 @@ const CreateAnswers = () => {
                     <input id='name-03' placeholder='enter name of answer' />
                 </div>
                 <div className='detail-block'>
-                    <label>Image URL</label>
-                    <input id='image-01' placeholder='enter image URL' />
+                    <label>Image</label>
+                    <input id='image-01' placeholder='enter image URL' type='file' />
                 </div>
                 <div className='detail-block'>
                     <label>Audio URL (Optional)</label>

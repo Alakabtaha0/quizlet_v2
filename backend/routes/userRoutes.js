@@ -2,12 +2,17 @@ const express = require('express');
 const userController = require('./../controllers/userController');
 const authController = require('./../controllers/authController');
 
-// Middleware
+
+
 const userRouter = express.Router();
 
 userRouter
     .route('/login')
     .post(authController.login);
+
+// userRouter
+//     .route('/forgot-password')
+//     .post(authController.forgotPassword);
 
 userRouter
     .route('/')

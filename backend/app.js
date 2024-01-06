@@ -14,6 +14,8 @@ const hpp = require('hpp');
 const cors = require('cors');
 
 
+
+
 // Render the react page - Serving static files
 app.use(express.static(path.join(__dirname, 'public/build')));
 
@@ -47,6 +49,7 @@ app.use(xss());
 app.use(hpp({
     whitelist: [ 'numberOfQuestions', 'category']
 }));
+
 
 app.use((req, res, next) => {
     req.requestTime = new Date().toISOString();

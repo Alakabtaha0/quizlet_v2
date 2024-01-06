@@ -61,7 +61,7 @@ IF IT'S THE CORRECT CODE CONTINUE OTHERWISE DON'T
 ******************************************************
 /// WHAT NEEDS TO BE DONE
 // Add email validation to see if user is already signed up or if email even works
-// Apply validation to all routes
+// Images and Audio stored on mongoDB
 // Data santization
 // Allow user to reset password
 // Add filtering to quizController (content type, number of questions - filter bar for later)
@@ -77,7 +77,6 @@ IF IT'S THE CORRECT CODE CONTINUE OTHERWISE DON'T
 // for the pages make a:
 // -- Update details page
 // Make seperate pages for admin and users
-// Hash the password then pass it into database - do data validation in front end
 // When you upload data there needs to be an answered section to store all of the answers
 
 // SIDE QUESTS
@@ -88,3 +87,7 @@ IF IT'S THE CORRECT CODE CONTINUE OTHERWISE DON'T
 // start off basic, get it working then add features
 
 
+
+// WHAT TO DO NOW -- EVERYTHING ELSE CAN BE ADDED LATER 
+// CREATE THE APP FRONT END
+// USING REACT NATIVE

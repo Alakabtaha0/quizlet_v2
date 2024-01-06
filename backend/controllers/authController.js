@@ -236,6 +236,27 @@ exports.protect = catchAsync(async (req, res, next) => {
 	next();
 });
 
+exports.forgotPassword = catchAsync(async (req, res, next) => {
+	// 1) Get user based on posted email
+	const { email } = req.body;
+	// 2) Check if email exists
+	const user = await User.findOne({ email: email });
+	if (!user) {
+		return next(
+			res.status(404).json({
+				status: "Failed",
+				message: "There is no user with that email address",
+			})
+		);
+	}
+	// 3) Generate random reset token
+	const resetToken = user.createPasswordResetToken();
+	
+	// 4) Send it to user's email
+
+	// 5) Send response
+});
+
 exports.restrictTo = (...roles) => {
 	return (req, res, next) => {
 		// We can use req.user as it's after the previous middleware where this was initialized
