@@ -23,7 +23,14 @@ app.use(express.static(path.join(__dirname, 'public/build')));
 app.use(cors());
 
 // Set security HTTP Headers
-app.use(helmet());
+app.use(helmet({
+    contentSecurityPolicy: {
+        directives: {
+            defaultSrc: ["'self'"],
+            connectSrc: ["'self'", 'https://quizlet-01.nw.r.appspot.com'],
+        }
+    }
+}));
 
 // Rate limiter to avoid getting Ddos'd
 const limiter = rateLimit({

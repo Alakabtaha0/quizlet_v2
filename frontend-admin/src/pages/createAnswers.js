@@ -42,7 +42,7 @@ const CreateAnswers = () => {
         if (audio !== '') {
             formData.append('audio', audio);
         }
-        axios.post('http://quizlet-01.nw.r.appspot.com/api/v1/answers', formData, {
+        axios.post('https://quizlet-01.nw.r.appspot.com/api/v1/answers', formData, {
             headers: {
                 'Content-Type': 'multipart/form-data',
                 Authorization: `Bearer ${Cookies.get('jwt')}`

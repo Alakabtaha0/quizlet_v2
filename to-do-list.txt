@@ -67,6 +67,8 @@ IF IT'S THE CORRECT CODE CONTINUE OTHERWISE DON'T
 // Add filtering to quizController (content type, number of questions - filter bar for later)
 // Some sorting implemented, come back and make it better
 
+// SECURITY WARNING -- SORT OUT ASAP
+// Remove service account key from github
 
 // BUGS *******
 // If someones account gets deleted it just constantly makes request
