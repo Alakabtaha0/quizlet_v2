@@ -55,13 +55,13 @@ IF IT'S THE CORRECT CODE CONTINUE OTHERWISE DON'T
 // Validate password on front end (Confirm Password) -- DONE
 // Display users name and other details -- Done
 // Hash and salt passwords -- DONE
+// Images and Audio stored on google cloud -- DONE
 ******************************************************
 ******************************************************
 ******************************************************
 ******************************************************
 /// WHAT NEEDS TO BE DONE
 // Add email validation to see if user is already signed up or if email even works
-// Images and Audio stored on mongoDB
 // Data santization
 // Allow user to reset password
 // Add filtering to quizController (content type, number of questions - filter bar for later)
